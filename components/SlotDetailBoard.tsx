@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { ArrowLeft, Fingerprint, Hash, Timer } from 'lucide-react'
-import type { VaultSlot } from '@/lib/mockData'
+import { ArrowLeft, Hash } from 'lucide-react'
+import type { VaultSlot } from '@/lib/slots'
 import { CompleteSlotButton } from '@/components/CompleteSlotButton'
 import { CopyProofButton } from '@/components/CopyProofButton'
 import { SlotStatusChip } from '@/components/SlotStatusChip'
@@ -30,22 +30,16 @@ export function SlotDetailBoard({
         <CompleteSlotButton isConnected={isConnected} isSubmitting={isSubmitting} onComplete={onComplete} slot={slot} />
       </div>
       <div className="proof-board">
-        <p className="section-title">Execution Proof</p>
-        <div className="proof-row">
-          <Hash size={18} />
-          <span>{slot.proofHash}</span>
-          <CopyProofButton proof={slot.proofHash} />
-        </div>
-        <div className="detail-facts">
-          <span>
-            <Timer size={16} />
-            {slot.completedAt ?? 'Awaiting completion'}
-          </span>
-          <span>
-            <Fingerprint size={16} />
-            {slot.owner.slice(0, 12)}...
-          </span>
-        </div>
+        <p className="section-title">Contract Proof</p>
+        {slot.proofHash ? (
+          <div className="proof-row">
+            <Hash size={18} />
+            <span>{slot.proofHash}</span>
+            <CopyProofButton proof={slot.proofHash} />
+          </div>
+        ) : (
+          <p className="muted">Awaiting onchain completion.</p>
+        )}
       </div>
     </section>
   )

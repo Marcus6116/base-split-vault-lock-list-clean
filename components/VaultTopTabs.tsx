@@ -2,13 +2,12 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { CheckSquare, Clock3, Grid3X3, Home, UserRound } from 'lucide-react'
+import { CheckSquare, Grid3X3, Home, UserRound } from 'lucide-react'
 
 const tabs = [
   { href: '/', label: 'Board', icon: Home },
   { href: '/checklist', label: 'Checklist', icon: CheckSquare },
-  { href: '/my', label: 'My Vault', icon: UserRound },
-  { href: '/timeline', label: 'Timeline', icon: Clock3 }
+  { href: '/my', label: 'My Vault', icon: UserRound }
 ]
 
 export function VaultTopTabs() {

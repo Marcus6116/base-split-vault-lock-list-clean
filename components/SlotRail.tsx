@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import type { VaultSlot } from '@/lib/mockData'
+import type { VaultSlot } from '@/lib/slots'
 import { SlotStatusChip } from '@/components/SlotStatusChip'
 
 export function SlotRail({ slots, activeId }: { slots: VaultSlot[]; activeId?: string }) {

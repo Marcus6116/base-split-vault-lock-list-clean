@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Activity, CheckCircle2, Clock, ListChecks } from 'lucide-react'
+import { CheckCircle2, Clock, ListChecks } from 'lucide-react'
 import { ProgressMeter } from '@/components/ProgressMeter'
 import { SlotStatusChip } from '@/components/SlotStatusChip'
 import { VaultHeader } from '@/components/VaultHeader'
@@ -10,7 +10,7 @@ import { useLockListVault } from '@/hooks/useLockListVault'
 export default function MyVaultPage() {
   const vault = useLockListVault()
   const pending = vault.slots.filter((slot) => slot.status === 'locked' || slot.status === 'active')
-  const completed = vault.slots.filter((slot) => slot.status === 'completed' || slot.status === 'released')
+  const completed = vault.slots.filter((slot) => slot.status === 'completed')
 
   return (
     <main className="app-shell page-stack">
@@ -19,16 +19,12 @@ export default function MyVaultPage() {
         <div className="my-record panel">
           <p className="section-title">My Vault</p>
           <h2>Wallet execution record</h2>
-          <p className="muted">{vault.address}</p>
+          <p className="muted">{vault.address ?? 'Connect a wallet to read your onchain progress.'}</p>
           <ProgressMeter completed={vault.completedCount} percent={vault.progressPercent} total={vault.totalSlots} />
           <div className="record-actions">
             <Link className="control-button" href="/checklist">
               <ListChecks size={16} />
               Continue
-            </Link>
-            <Link className="control-button secondary" href="/timeline">
-              <Activity size={16} />
-              History
             </Link>
           </div>
         </div>

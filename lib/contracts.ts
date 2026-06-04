@@ -1,4 +1,4 @@
-export const LOCK_LIST_VAULT_CONTRACT_ADDRESS = '0x3d0e8cc3b059b46164E35285ab375fFb71E2045e'
+export const LOCK_LIST_VAULT_CONTRACT_ADDRESS = '0x3d0e8cc3b059b46164E35285ab375fFb71E2045e' as const
 
 export const lockListVaultAbi = [
   {

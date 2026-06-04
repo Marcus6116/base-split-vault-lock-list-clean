@@ -3,13 +3,11 @@
 import { useMemo, useState } from 'react'
 import { useQueryClient } from '@tanstack/react-query'
 import { BaseError } from 'viem'
-import { useAccount, usePublicClient, useReadContract, useSwitchChain, useWriteContract } from 'wagmi'
+import { useAccount, usePublicClient, useReadContract, useReadContracts, useSwitchChain, useWriteContract } from 'wagmi'
 import { base } from 'wagmi/chains'
 import { LOCK_LIST_VAULT_CONTRACT_ADDRESS, lockListVaultAbi } from '@/lib/contracts'
 import { attributedWriteOptions } from '@/lib/wagmi'
-import { initialSlots, initialTimeline, MOCK_ADDRESS, type TimelineRecord, type VaultSlot } from '@/lib/mockData'
-import { completeSlot as completeSlotState, getActiveSlot, getCompletedCount, getProgressPercent } from '@/lib/vaultLogic'
-import { trackTransaction } from '@/utils/track'
+import { slotDefinitions, type VaultSlot } from '@/lib/slots'
 
 const ZERO_BYTES32 = '0x0000000000000000000000000000000000000000000000000000000000000000' as const
 
@@ -19,14 +17,11 @@ export function useLockListVault() {
   const publicClient = usePublicClient({ chainId: base.id })
   const { switchChainAsync } = useSwitchChain()
   const { writeContractAsync } = useWriteContract()
-  const [slots, setSlots] = useState<VaultSlot[]>(initialSlots)
-  const [timeline, setTimeline] = useState<TimelineRecord[]>(initialTimeline)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [lastTxHash, setLastTxHash] = useState<string | null>(null)
   const [actionStatus, setActionStatus] = useState<string | null>(null)
   const [actionError, setActionError] = useState<string | null>(null)
 
-  const userAddress = address ?? MOCK_ADDRESS
   const { data: progress } = useReadContract({
     address: LOCK_LIST_VAULT_CONTRACT_ADDRESS,
     abi: lockListVaultAbi,
@@ -37,43 +32,55 @@ export function useLockListVault() {
     }
   })
 
-  const syncedSlots = useMemo(() => {
-    if (!progress) return slots
+  const { data: proofResults } = useReadContracts({
+    contracts: address
+      ? slotDefinitions.map((slot) => ({
+          address: LOCK_LIST_VAULT_CONTRACT_ADDRESS,
+          abi: lockListVaultAbi,
+          functionName: 'proofFor',
+          args: [address, BigInt(slot.index)]
+        }))
+      : [],
+    query: {
+      enabled: Boolean(address)
+    }
+  })
 
-    const chainCompletedCount = Number(progress.completedCount)
-    const chainActiveSlotId = Number(progress.activeSlotId)
+  const completedCount = progress ? Number(progress.completedCount) : 0
+  const totalSlots = progress ? Number(progress.totalSlots) : slotDefinitions.length
+  const activeSlotId = progress ? Number(progress.activeSlotId) : completedCount + 1
+  const progressPercent = progress ? Math.round(Number(progress.progressBps) / 100) : 0
 
-    return slots.map((slot) => {
-      if (slot.index <= chainCompletedCount) {
+  const slots = useMemo<VaultSlot[]>(() => {
+    return slotDefinitions.map((slot, slotIndex) => {
+      const proofResult = proofResults?.[slotIndex] as { status?: string; result?: unknown } | undefined
+      const proofHashValue = proofResult?.status === 'success' ? proofResult.result : undefined
+      const proofHash =
+        typeof proofHashValue === 'string' && proofHashValue !== ZERO_BYTES32 ? (proofHashValue as `0x${string}`) : undefined
+
+      if (slot.index <= completedCount) {
         return {
           ...slot,
           status: 'completed' as const,
-          owner: userAddress,
-          completedAt: slot.completedAt ?? 'Completed on Base'
+          proofHash
         }
       }
 
-      if (slot.index === chainActiveSlotId) {
+      if (slot.index === activeSlotId) {
         return {
           ...slot,
-          status: 'active' as const,
-          owner: userAddress,
-          completedAt: undefined
+          status: 'active' as const
         }
       }
 
       return {
         ...slot,
-        status: 'locked' as const,
-        owner: userAddress,
-        completedAt: undefined
+        status: 'locked' as const
       }
     })
-  }, [progress, slots, userAddress])
+  }, [activeSlotId, completedCount, proofResults])
 
-  const syncedCompletedCount = useMemo(() => getCompletedCount(syncedSlots), [syncedSlots])
-  const syncedProgressPercent = useMemo(() => getProgressPercent(syncedSlots), [syncedSlots])
-  const syncedActiveSlot = useMemo(() => getActiveSlot(syncedSlots), [syncedSlots])
+  const activeSlot = useMemo(() => slots.find((slot) => slot.status === 'active'), [slots])
 
   async function completeSlot(slotId: string) {
     if (isSubmitting) return
@@ -82,7 +89,7 @@ export function useLockListVault() {
       return
     }
 
-    const targetSlot = syncedSlots.find((slot) => slot.id === slotId)
+    const targetSlot = slots.find((slot) => slot.id === slotId)
     if (!targetSlot || targetSlot.status !== 'active') {
       setActionError('Only the active onchain slot can be completed.')
       return
@@ -113,24 +120,9 @@ export function useLockListVault() {
 
       await publicClient.waitForTransactionReceipt({ hash: txHash })
 
-      setSlots((current) => {
-        const next = completeSlotState(current, slotId)
-        if (next.event) {
-          setTimeline((records) => [
-            {
-              ...(next.event as TimelineRecord),
-              proofHash: txHash
-            },
-            ...records
-          ])
-        }
-        return next.slots.map((slot) => (slot.id === slotId ? { ...slot, proofHash: txHash, owner: address } : slot))
-      })
       setLastTxHash(txHash)
       await queryClient.invalidateQueries()
       setActionStatus('Completed on Base.')
-
-      await trackTransaction('app-lock-list', 'base-split-vault-lock-list', address, txHash)
     } catch (error) {
       const message = error instanceof BaseError ? error.shortMessage : error instanceof Error ? error.message : 'Transaction failed.'
       setActionError(message)
@@ -141,19 +133,18 @@ export function useLockListVault() {
   }
 
   return {
-    address: userAddress,
-    activeSlot: syncedActiveSlot,
-    completedCount: syncedCompletedCount,
+    address,
+    activeSlot,
+    completedCount,
     actionStatus,
     actionError,
     hasProgressRecord: isConnected,
     isConnected,
     isSubmitting,
     lastTxHash,
-    progressPercent: syncedProgressPercent,
-    slots: syncedSlots,
-    timeline,
-    totalSlots: slots.length,
+    progressPercent,
+    slots,
+    totalSlots,
     completeSlot
   }
 }

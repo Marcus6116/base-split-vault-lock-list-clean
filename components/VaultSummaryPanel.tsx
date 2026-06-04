@@ -10,7 +10,7 @@ export function VaultSummaryPanel({
   completed: number
   total: number
   percent: number
-  address: string
+  address?: string
 }) {
   return (
     <aside className="summary-panel panel">
@@ -33,7 +33,7 @@ export function VaultSummaryPanel({
       <div className="summary-stat">
         <KeyRound size={18} />
         <span>
-          <strong>{address.slice(0, 10)}...</strong>
+          <strong>{address ? `${address.slice(0, 10)}...` : 'Not connected'}</strong>
           <small>Progress owner</small>
         </span>
       </div>

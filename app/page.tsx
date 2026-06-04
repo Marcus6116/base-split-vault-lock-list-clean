@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Clock3, ListChecks } from 'lucide-react'
+import { ListChecks } from 'lucide-react'
 import { NextSlotPanel } from '@/components/NextSlotPanel'
 import { SlotRail } from '@/components/SlotRail'
 import { VaultHeader } from '@/components/VaultHeader'
@@ -24,10 +24,6 @@ export default function HomePage() {
               <Link className="control-button" href="/checklist">
                 <ListChecks size={16} />
                 Open Checklist
-              </Link>
-              <Link className="control-button secondary" href="/timeline">
-                <Clock3 size={16} />
-                View Timeline
               </Link>
             </div>
           </div>

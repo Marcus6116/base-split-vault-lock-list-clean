@@ -6,12 +6,11 @@ import { SlotDetailBoard } from '@/components/SlotDetailBoard'
 import { SlotRail } from '@/components/SlotRail'
 import { VaultHeader } from '@/components/VaultHeader'
 import { useLockListVault } from '@/hooks/useLockListVault'
-import { getSlotById } from '@/lib/vaultLogic'
 
 export default function SlotDetailPage() {
   const params = useParams<{ id: string }>()
   const vault = useLockListVault()
-  const slot = getSlotById(vault.slots, params.id)
+  const slot = vault.slots.find((item) => item.id === params.id)
 
   if (!slot) {
     notFound()

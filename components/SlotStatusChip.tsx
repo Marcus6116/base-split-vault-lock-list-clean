@@ -1,11 +1,10 @@
-import { Check, Lock, Radio, RotateCcw } from 'lucide-react'
-import type { SlotStatus } from '@/lib/mockData'
+import { Check, Lock, Radio } from 'lucide-react'
+import type { SlotStatus } from '@/lib/slots'
 
 const statusConfig = {
   locked: { label: 'Locked', icon: Lock },
   active: { label: 'Active', icon: Radio },
-  completed: { label: 'Completed', icon: Check },
-  released: { label: 'Released', icon: RotateCcw }
+  completed: { label: 'Completed', icon: Check }
 } satisfies Record<SlotStatus, { label: string; icon: typeof Lock }>
 
 export function SlotStatusChip({ status }: { status: SlotStatus }) {

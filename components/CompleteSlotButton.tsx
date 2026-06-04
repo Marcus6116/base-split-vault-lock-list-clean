@@ -1,7 +1,7 @@
 'use client'
 
 import { CheckCircle2, Loader2 } from 'lucide-react'
-import type { VaultSlot } from '@/lib/mockData'
+import type { VaultSlot } from '@/lib/slots'
 
 export function CompleteSlotButton({
   slot,

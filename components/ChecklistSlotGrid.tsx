@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
-import type { VaultSlot } from '@/lib/mockData'
+import type { VaultSlot } from '@/lib/slots'
 import { SlotStatusChip } from '@/components/SlotStatusChip'
 
 export function ChecklistSlotGrid({ slots, selectedId }: { slots: VaultSlot[]; selectedId?: string }) {

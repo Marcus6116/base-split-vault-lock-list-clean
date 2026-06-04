@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight, LockKeyhole } from 'lucide-react'
-import type { VaultSlot } from '@/lib/mockData'
+import type { VaultSlot } from '@/lib/slots'
 import { CompleteSlotButton } from '@/components/CompleteSlotButton'
 import { SlotStatusChip } from '@/components/SlotStatusChip'
 
