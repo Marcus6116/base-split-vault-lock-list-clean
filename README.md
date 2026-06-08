@@ -125,3 +125,13 @@ If the repository includes tests, run them with the appropriate command for the 
 Common examples include:
 
 ```bash
+npm test
+```
+
+```bash
+pytest
+```
+
+```bash
+make test
+```
