@@ -47,3 +47,12 @@ The exact setup steps depend on the files included in the repository.
 Start by checking for common project files such as:
 
 - `package.json`
+- `requirements.txt`
+- `pyproject.toml`
+- `Cargo.toml`
+- `go.mod`
+- `Makefile`
+- `.env.example`
+- configuration files
+- source directories
+- test directories
