@@ -135,3 +135,13 @@ pytest
 ```bash
 make test
 ```
+
+If no test command is currently defined, consider adding one as the project evolves.
+
+## Configuration
+
+If the project requires configuration, look for files such as:
+
+- `.env.example`
+- `config.json`
+- `config.yaml`
