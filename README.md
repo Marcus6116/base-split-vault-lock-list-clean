@@ -27,3 +27,13 @@ https://github.com/Marcus6116/base-split-vault-lock-list-clean.git
 ## Getting Started
 
 Clone the repository:
+
+```bash
+git clone https://github.com/Marcus6116/base-split-vault-lock-list-clean.git
+```
+
+Move into the project directory:
+
+```bash
+cd base-split-vault-lock-list-clean
+```
