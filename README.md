@@ -184,3 +184,13 @@ If setup or usage does not work as expected:
 4. Look for scripts or commands defined by the project.
 5. Check recent commits for changes to setup or usage.
 6. Open an issue in the repository if additional help is needed.
+
+## License
+
+No license information was provided in the original README.
+
+If this project is intended for public reuse, add a license file to clarify permitted usage.
+
+## Links
+
+- Repository: <https://github.com/Marcus6116/base-split-vault-lock-list-clean.git>
