@@ -37,3 +37,13 @@ Move into the project directory:
 ```bash
 cd base-split-vault-lock-list-clean
 ```
+
+Review the files in the repository to understand the available source code, configuration, and documentation.
+
+## Setup
+
+The exact setup steps depend on the files included in the repository.
+
+Start by checking for common project files such as:
+
+- `package.json`
