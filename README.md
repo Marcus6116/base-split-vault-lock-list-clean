@@ -66,3 +66,13 @@ npm install
 ```
 
 If a Python requirements file is present:
+
+```bash
+pip install -r requirements.txt
+```
+
+If a Makefile is present, inspect the available commands:
+
+```bash
+make help
+```
