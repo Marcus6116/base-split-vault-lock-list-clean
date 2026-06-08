@@ -96,3 +96,13 @@ python main.py
 ```
 
 ```bash
+make run
+```
+
+Use only the commands that match the files and tooling included in this repository.
+
+## Development
+
+Recommended development workflow:
+
+1. Clone the repository.
