@@ -76,3 +76,13 @@ If a Makefile is present, inspect the available commands:
 ```bash
 make help
 ```
+
+## Usage
+
+After setup, review the project files to identify the main entry point.
+
+Common usage patterns may include:
+
+```bash
+npm run start
+```
