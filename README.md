@@ -116,3 +116,12 @@ Example:
 
 ```bash
 git checkout -b update-readme
+```
+
+## Testing
+
+If the repository includes tests, run them with the appropriate command for the project.
+
+Common examples include:
+
+```bash
