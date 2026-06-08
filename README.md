@@ -164,3 +164,12 @@ When updating this repository:
 ## Suggested README Updates
 
 As the project grows, consider adding:
+
+- A detailed project description
+- Installation requirements
+- Exact runtime or build commands
+- Architecture notes
+- Examples
+- Troubleshooting steps
+- License information
+- Contribution guidelines
