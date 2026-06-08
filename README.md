@@ -56,3 +56,13 @@ Start by checking for common project files such as:
 - configuration files
 - source directories
 - test directories
+
+If dependency files are present, install dependencies using the appropriate tool for the project.
+
+For example, if a Node.js package file is present:
+
+```bash
+npm install
+```
+
+If a Python requirements file is present:
