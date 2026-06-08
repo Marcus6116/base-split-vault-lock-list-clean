@@ -145,3 +145,13 @@ If the project requires configuration, look for files such as:
 - `.env.example`
 - `config.json`
 - `config.yaml`
+- `.toml` configuration files
+- environment-specific settings
+
+Do not commit local secrets or machine-specific configuration files.
+
+## Project Maintenance Notes
+
+When updating this repository:
+
+- Keep documentation clear and current.
