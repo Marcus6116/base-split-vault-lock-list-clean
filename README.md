@@ -106,3 +106,13 @@ Use only the commands that match the files and tooling included in this reposito
 Recommended development workflow:
 
 1. Clone the repository.
+2. Create a new branch for your changes.
+3. Make focused updates.
+4. Run any available checks or tests.
+5. Commit changes with a clear message.
+6. Open a pull request or merge according to the project workflow.
+
+Example:
+
+```bash
+git checkout -b update-readme
