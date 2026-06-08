@@ -86,3 +86,13 @@ Common usage patterns may include:
 ```bash
 npm run start
 ```
+
+```bash
+npm run build
+```
+
+```bash
+python main.py
+```
+
+```bash
