@@ -17,3 +17,13 @@ Because the original project description is minimal, this README focuses on prac
 - Suitable for incremental documentation and maintenance
 - Provides a starting point for setup, usage, and contribution notes
 - Keeps project instructions centralized in this README
+
+## Repository URL
+
+```text
+https://github.com/Marcus6116/base-split-vault-lock-list-clean.git
+```
+
+## Getting Started
+
+Clone the repository:
