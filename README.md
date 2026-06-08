@@ -155,3 +155,12 @@ Do not commit local secrets or machine-specific configuration files.
 When updating this repository:
 
 - Keep documentation clear and current.
+- Prefer small, reviewable changes.
+- Remove obsolete files when they are no longer needed.
+- Keep formatting consistent.
+- Document any setup requirements that are discovered.
+- Add examples when they help future users understand the project.
+
+## Suggested README Updates
+
+As the project grows, consider adding:
