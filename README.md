@@ -100,3 +100,11 @@ When making changes:
 - Update documentation when behavior or setup steps change.
 - Avoid committing generated files unless they are required.
 - Review changes before opening a pull request or merging.
+
+## Project Structure
+
+The exact structure depends on the files currently present in the repository.
+
+Recommended documentation for future updates includes:
+
+- Source directory descriptions.
