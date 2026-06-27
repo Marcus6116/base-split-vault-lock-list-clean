@@ -86,3 +86,9 @@ For example, depending on the project structure, usage may involve:
 - Running tests.
 - Executing a main file or application entry point.
 - Importing project modules into another project.
+
+Only use commands that are supported by the files included in this repository.
+
+## Development Notes
+
+Keep the repository clean and organized.
