@@ -92,3 +92,11 @@ Only use commands that are supported by the files included in this repository.
 ## Development Notes
 
 Keep the repository clean and organized.
+
+When making changes:
+
+- Use clear commit messages.
+- Keep related changes grouped together.
+- Update documentation when behavior or setup steps change.
+- Avoid committing generated files unless they are required.
+- Review changes before opening a pull request or merging.
