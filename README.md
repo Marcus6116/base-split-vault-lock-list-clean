@@ -63,3 +63,10 @@ A typical setup process is:
 3. Review the available source files and configuration files.
 4. Install any dependencies required by the project.
 5. Run the available build, test, or start command if one is provided.
+
+Example:
+
+```bash
+git clone https://github.com/Marcus6116/base-split-vault-lock-list-clean.git
+cd base-split-vault-lock-list-clean
+```
