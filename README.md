@@ -122,3 +122,10 @@ Common test entry points may be defined in project files such as package scripts
 If no test setup is present, document any manual verification steps used during development.
 
 ## Contributing
+
+Contributions should keep the project focused and maintainable.
+
+Before contributing:
+
+1. Review the existing files and style.
+2. Make small, understandable changes.
