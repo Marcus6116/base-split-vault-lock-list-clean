@@ -70,3 +70,11 @@ Example:
 git clone https://github.com/Marcus6116/base-split-vault-lock-list-clean.git
 cd base-split-vault-lock-list-clean
 ```
+
+Then follow the instructions provided by the project files.
+
+## Usage
+
+Use the repository according to the commands, scripts, or entry points included in the project.
+
+If a scripts section, build file, or command runner is present, use it as the primary source for running the project.
