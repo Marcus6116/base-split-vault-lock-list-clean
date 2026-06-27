@@ -42,3 +42,10 @@ Look for common project files such as:
 
 - `package.json`
 - `requirements.txt`
+- `pyproject.toml`
+- `Cargo.toml`
+- `go.mod`
+- `pom.xml`
+- `build.gradle`
+- `Makefile`
+- Configuration or environment files
