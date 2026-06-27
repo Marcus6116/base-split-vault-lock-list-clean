@@ -108,3 +108,9 @@ The exact structure depends on the files currently present in the repository.
 Recommended documentation for future updates includes:
 
 - Source directory descriptions.
+- Configuration file explanations.
+- Build and test instructions.
+- Deployment or release notes, if applicable.
+- Examples of common workflows.
+
+## Testing
