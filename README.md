@@ -114,3 +114,11 @@ Recommended documentation for future updates includes:
 - Examples of common workflows.
 
 ## Testing
+
+If the repository includes a test command, run it before submitting changes.
+
+Common test entry points may be defined in project files such as package scripts, build files, or test configuration files.
+
+If no test setup is present, document any manual verification steps used during development.
+
+## Contributing
