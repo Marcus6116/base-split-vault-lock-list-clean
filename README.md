@@ -33,3 +33,12 @@ cd base-split-vault-lock-list-clean
 - Suitable starting point for development, review, or integration work.
 - Simple repository URL for cloning and sharing.
 - README structure designed to support future project details.
+
+## Getting Started
+
+After cloning the repository, review the project files to identify the technology stack, dependencies, and available commands.
+
+Look for common project files such as:
+
+- `package.json`
+- `requirements.txt`
