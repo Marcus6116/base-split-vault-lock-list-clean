@@ -27,3 +27,9 @@ cd base-split-vault-lock-list-clean
 ```
 
 ## Features
+
+- Clean project repository for BaseSplitVaultLockList.
+- Centralized place for source files and project documentation.
+- Suitable starting point for development, review, or integration work.
+- Simple repository URL for cloning and sharing.
+- README structure designed to support future project details.
