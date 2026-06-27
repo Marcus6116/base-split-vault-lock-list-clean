@@ -129,3 +129,10 @@ Before contributing:
 
 1. Review the existing files and style.
 2. Make small, understandable changes.
+3. Test your changes where possible.
+4. Update this README if setup or usage changes.
+5. Submit changes with a clear explanation.
+
+## Notes
+
+This README is intentionally conservative because the original project description only provided the project name and repository URL.
