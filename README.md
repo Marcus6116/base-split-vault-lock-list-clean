@@ -78,3 +78,11 @@ Then follow the instructions provided by the project files.
 Use the repository according to the commands, scripts, or entry points included in the project.
 
 If a scripts section, build file, or command runner is present, use it as the primary source for running the project.
+
+For example, depending on the project structure, usage may involve:
+
+- Running a development command.
+- Building the project.
+- Running tests.
+- Executing a main file or application entry point.
+- Importing project modules into another project.
