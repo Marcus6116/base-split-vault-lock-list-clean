@@ -13,3 +13,9 @@ The project name suggests a focus on base-level split, vault, lock, or list-rela
 Use this document as the starting point for understanding, setting up, and working with the project.
 
 ## Repository
+
+Clone the repository from GitHub:
+
+```bash
+git clone https://github.com/Marcus6116/base-split-vault-lock-list-clean.git
+```
