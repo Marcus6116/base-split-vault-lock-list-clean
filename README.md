@@ -136,3 +136,11 @@ Before contributing:
 ## Notes
 
 This README is intentionally conservative because the original project description only provided the project name and repository URL.
+
+As the project evolves, this file should be updated with exact setup steps, supported commands, dependencies, and examples.
+
+## License
+
+No license information was provided in the original README.
+
+If a license file exists in the repository, refer to that file for licensing terms.
