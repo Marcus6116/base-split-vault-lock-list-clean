@@ -19,3 +19,11 @@ Clone the repository from GitHub:
 ```bash
 git clone https://github.com/Marcus6116/base-split-vault-lock-list-clean.git
 ```
+
+Then enter the project directory:
+
+```bash
+cd base-split-vault-lock-list-clean
+```
+
+## Features
