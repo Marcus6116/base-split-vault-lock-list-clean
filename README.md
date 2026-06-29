@@ -48,3 +48,12 @@ Look for common project files such as:
 - `go.mod`
 - `pom.xml`
 - `build.gradle`
+- `Makefile`
+- Environment files
+- Configuration files
+- Source directories
+- Test directories
+
+These files usually indicate how the project should be installed, built, tested, or run.
+
+## Setup
