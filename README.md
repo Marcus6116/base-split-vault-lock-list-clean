@@ -76,3 +76,14 @@ Basic clone example:
 git clone https://github.com/Marcus6116/base-split-vault-lock-list-clean.git
 cd base-split-vault-lock-list-clean
 ```
+
+Then follow the instructions implied by the project files.
+
+## Usage
+
+Use the repository according to the scripts, commands, entry points, or modules included in the project.
+
+Depending on the actual project structure, usage may involve:
+
+- Running a development command.
+- Building the project.
