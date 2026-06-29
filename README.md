@@ -176,3 +176,13 @@ Useful documentation may include:
 - Build commands.
 - Test commands.
 - Runtime commands.
+- Configuration examples.
+- Common troubleshooting notes.
+- Known limitations.
+- Release instructions, if applicable.
+
+Avoid documenting behavior that has not been verified in the repository.
+
+## Notes
+
+This README is intentionally conservative because the available project information provides only the project name and repository URL.
