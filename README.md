@@ -155,3 +155,14 @@ Recommended verification steps may include:
 Contributions should keep the project focused, clear, and maintainable.
 
 Before contributing:
+
+1. Review the existing repository structure.
+2. Follow the style and patterns already present.
+3. Make small, focused changes.
+4. Test changes where possible.
+5. Update this README when setup, usage, or behavior changes.
+6. Provide a clear explanation of the change.
+
+Good contributions make the repository easier to understand and maintain.
+
+## Documentation Guidelines
