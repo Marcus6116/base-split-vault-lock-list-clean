@@ -166,3 +166,13 @@ Before contributing:
 Good contributions make the repository easier to understand and maintain.
 
 ## Documentation Guidelines
+
+When adding new documentation, include practical details that help future users and contributors.
+
+Useful documentation may include:
+
+- Required tools and versions.
+- Installation steps.
+- Build commands.
+- Test commands.
+- Runtime commands.
