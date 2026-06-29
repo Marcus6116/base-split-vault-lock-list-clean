@@ -117,3 +117,13 @@ A documented project structure helps contributors understand where changes shoul
 ## Development Notes
 
 Keep the repository clean, readable, and maintainable.
+
+When making changes:
+
+- Use clear and specific commit messages.
+- Keep related changes grouped together.
+- Avoid mixing unrelated updates in one commit.
+- Update documentation when setup or usage changes.
+- Avoid committing generated files unless they are required.
+- Review changes before merging or submitting them.
+- Keep naming consistent with the existing project style.
