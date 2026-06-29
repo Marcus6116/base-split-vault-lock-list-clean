@@ -38,3 +38,13 @@ cd base-split-vault-lock-list-clean
 ## Getting Started
 
 After cloning the repository, review the included files to determine the project structure, technology stack, dependencies, and available commands.
+
+Look for common project files such as:
+
+- `package.json`
+- `requirements.txt`
+- `pyproject.toml`
+- `Cargo.toml`
+- `go.mod`
+- `pom.xml`
+- `build.gradle`
