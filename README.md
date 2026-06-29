@@ -87,3 +87,12 @@ Depending on the actual project structure, usage may involve:
 
 - Running a development command.
 - Building the project.
+- Running tests.
+- Executing an application entry point.
+- Importing modules into another project.
+- Reviewing configuration or data files.
+- Extending the repository with new project logic.
+
+Only use commands that are supported by files included in this repository.
+
+If a command is added later, document it in this README so the project remains easy to use.
