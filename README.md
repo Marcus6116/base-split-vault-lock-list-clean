@@ -146,3 +146,12 @@ If no test setup is currently present, document any manual verification steps us
 Recommended verification steps may include:
 
 1. Confirm that the project installs correctly.
+2. Confirm that any documented commands run successfully.
+3. Review changed files for formatting and consistency.
+4. Check that new behavior is documented where appropriate.
+
+## Contributing
+
+Contributions should keep the project focused, clear, and maintainable.
+
+Before contributing:
