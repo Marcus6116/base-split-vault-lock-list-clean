@@ -186,3 +186,13 @@ Avoid documenting behavior that has not been verified in the repository.
 ## Notes
 
 This README is intentionally conservative because the available project information provides only the project name and repository URL.
+
+As the project develops, this file should be updated with exact setup instructions, supported commands, dependencies, examples, and project-specific details.
+
+Keeping this README current will make the repository easier to use, review, and maintain.
+
+## License
+
+No license information was provided in the original README.
+
+If a license file exists in the repository, refer to that file for the applicable licensing terms.
