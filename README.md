@@ -127,3 +127,13 @@ When making changes:
 - Avoid committing generated files unless they are required.
 - Review changes before merging or submitting them.
 - Keep naming consistent with the existing project style.
+- Prefer small, understandable changes over large, unclear updates.
+
+## Testing
+
+If the repository includes a test command, run it before submitting changes.
+
+Common places to find test commands include:
+
+- Package scripts.
+- Build files.
