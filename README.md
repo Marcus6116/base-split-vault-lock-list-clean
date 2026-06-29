@@ -107,3 +107,13 @@ As the repository evolves, this section can be expanded to describe:
 - Configuration files.
 - Test files.
 - Build files.
+- Runtime entry points.
+- Documentation files.
+- Example files.
+- Deployment or release-related files.
+
+A documented project structure helps contributors understand where changes should be made.
+
+## Development Notes
+
+Keep the repository clean, readable, and maintainable.
