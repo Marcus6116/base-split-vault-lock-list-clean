@@ -96,3 +96,14 @@ Depending on the actual project structure, usage may involve:
 Only use commands that are supported by files included in this repository.
 
 If a command is added later, document it in this README so the project remains easy to use.
+
+## Project Structure
+
+The exact project structure depends on the files currently present in the repository.
+
+As the repository evolves, this section can be expanded to describe:
+
+- Source directories.
+- Configuration files.
+- Test files.
+- Build files.
