@@ -137,3 +137,12 @@ Common places to find test commands include:
 
 - Package scripts.
 - Build files.
+- Test configuration files.
+- Make targets.
+- Project documentation.
+
+If no test setup is currently present, document any manual verification steps used during development.
+
+Recommended verification steps may include:
+
+1. Confirm that the project installs correctly.
